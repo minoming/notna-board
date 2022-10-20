@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { worker } from "./mocks/worker";
+import Chart from './component/chart/Chart';
 
 if (process.env.NODE_ENV === "development") {
   worker.start();
@@ -11,7 +12,7 @@ if (process.env.NODE_ENV === "development") {
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <Chart />
   </React.StrictMode>
 );
 
