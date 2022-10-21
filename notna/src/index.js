@@ -4,28 +4,15 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { worker } from "./mocks/worker";
-import Chart from "./component/chart/Chart";
-import axios from "axios";
 
 if (process.env.NODE_ENV === "development") {
   worker.start();
 }
 
-axios
-  .get(
-    "/samples"
-  )
-  .then((res) => {
-    console.log(res.data);
-  })
-  .catch((e) => {
-    alert("error");
-  });
-
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <Chart />
+    <App></App>
   </React.StrictMode>
 );
 

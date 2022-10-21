@@ -1,11 +1,14 @@
 import { rest } from "msw";
 import totalFertilityRateData from "./json/totalFertilityRate.json";
-
-const todos = ["먹기", "자기", "놀기"];
+import liveBirths from "./json/liveBirths.json";
 
 export const sampleMocks = [
   //get
-  rest.get("/samples", (req, res, ctx) => {
+  rest.get("/liveBirth", (req, res, ctx) => {
+    return res(ctx.status(200), ctx.json(liveBirths));
+  }),
+
+  rest.get("/totalFertilityRate", (req, res, ctx) => {
     return res(ctx.status(200), ctx.json(totalFertilityRateData));
   })
 ];
