@@ -10,11 +10,18 @@ function App() {
 
   useEffect(() => {
     axios
-      .get("/liveBirth")
+      .get("/liveBirth", {
+        params: {
+          area: "00",
+          sub: "10",
+          startYear: "201901",
+          endYear: "202201"
+        }
+      })
       .then((res) => {
         const _data1 = [];
         const _data2 = [];
-        res.data.map((item) => {
+        res.data.data.map((item) => {
           _data1.push(item["PRD_DE"]);
           _data2.push(item["DT"]);
 
