@@ -1,13 +1,13 @@
 import React from 'react'
 import Chart from '../component/chart/Chart'
-
+import {Box} from '@mui/material'
 const Home = () => {
   return (
     <>
       <div>this is home</div>
-      <div>
+      <Box>
         <Chart></Chart>
-      </div>
+      </Box>
     </>
   )
 }
